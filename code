@@ -1,0 +1,54 @@
+import subprocess
+import pyttsx3 as pp
+import os
+
+print("welcome to my application")
+pp.speak("welcome to my application,how can I help you")
+
+
+print("I CAN OPEN APPLICATION FOR YOU TELL ME WHAT YOU REQUIRE")
+while True:
+	print("Type your application you want to open: ", end=' ')
+	p=input()
+	if("run" in p) or ("open"in p) or ("execute" in p):
+			if("notepad"in p) or (("editor"in p) and ("text" in p)):
+				pp.speak("Opening notepad")
+				print("Opening notepad") 
+				os.system("notepad")
+			elif("media"in p) or ("player" in p):
+                            os.startfile("C:\Program Files\Windows Media Player\wmplayer.exe")
+			elif("chrome"in p) or (("google" in p) and ("chrome" in p)):
+				pp.speak("Opening Google Chrome")
+				print("Opening Google chrome") 
+				subprocess.call('C:\Program Files (x86)\Google\Chrome\Application\chrome.exe')
+			elif("mozilla"in p) or ("firefox" in p) or ("browser" in p):
+				pp.speak("Opening Mozilla Firefox")
+				print("Opening Mozilla firefox") 
+				os.startfile("C:\\Program Files\\Mozilla Firefox\\firefox.exe")
+			elif("turbo c++"in p):
+				pp.speak("Opening turbo c++ compiler")
+				print("Opening Turbo c++ compiler") 
+				os.system("Turboc8")
+			elif("word"in p):
+				pp.speak("Opening Microsoft word")
+				print("Opening Microsoft Word") 
+				os.startfile("C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE")
+			elif("powerpoint"in p) or ("presentation" in p):
+				pp.speak("Opening Microsoft Powerpoint Presentation")
+				print("Opening Microsoft Powerpoint Presentation") 
+				os.startfile("C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.exe")
+			elif("paint" in p):
+				pp.speak("Opening MS paint")
+				print("Opening MS paint")
+				os.system("mspaint")
+			
+			else:
+				print("you did some mistake")
+				print("Please try again!")
+				pp.speak("Please try again!")
+	elif("close"in p) or ("stop"in p) or ("exit"in p) or ("quit" in p):
+		print("Thank You,visit again if you need help")
+		pp.speak("Thank you,visit again if you need help")
+		exit()
+	else:
+		pp.speak("Not got. Please enter again .")
